@@ -20,6 +20,7 @@ class ChatScrambler extends PluginBase implements Listener{
     {
         $this->loadWords();
         // Enable Listener
+        // Start Task
     }
 
     public function onChat(playerChatEvent $event)
