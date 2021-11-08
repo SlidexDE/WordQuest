@@ -16,13 +16,21 @@ class ChatScrambler extends PluginBase implements Listener{
     public $word = null;
     public $words = [];
 
+    public function onEnable()
+    {
+        $this->loadWords();
+        // Enable Listener
+    }
+
     public function onChat(playerChatEvent $event)
     {
+        $player = $event->getPlayer();
         $msg = $event->getMessage();
 
         if ($msg == $this->word)
         {
             $this->word = null;
+            $this->playerWon($player);
         }
     }
 
@@ -33,6 +41,11 @@ class ChatScrambler extends PluginBase implements Listener{
         {
             array_push($this->words, $word);
         }
+    }
+    public function playerWon($player)
+    {
+        $this->getServer()->broadcastMessage("§6" . $player->getName() . " Guessed The Word Correctly.\nThe Word Was " . $this->word);
+        // Give money
     }
 
 }
