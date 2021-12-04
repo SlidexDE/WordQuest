@@ -37,8 +37,8 @@ class WordScrambler extends PluginBase implements Listener{
         if (strtolower($msg) == strtolower($this->word))
         {
             $event->cancel();
-            $this->word = null;
             $this->playerWon($player);
+            $this->word = null;
         }
     }
 
