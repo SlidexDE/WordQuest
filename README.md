@@ -2,7 +2,7 @@
  - Players can try to be the first one to unscramble words for rewards!
 # Features 
 - Customizable Words
-- EconomyAPI Support
+- BedrockEconomy Support
 - Customizable Reward
 # Soft Dependancies
 - It is reccomended to install EconomyAPI so players will receive a reward if they guess the word
